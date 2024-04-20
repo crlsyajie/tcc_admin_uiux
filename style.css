@@ -1,10 +1,44 @@
+/*
 html, body {
     margin:0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+} */
+
+/*--------fonts------------*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+/* ============gllobals=========*/
+*{
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.admin-template { max-height: 100vh; width: 100%;}
+
+:root{
+    --blue: #2a2185;
+    --white: #fff;
+    --gray: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+    --red1: #B80000;
+    --maroon: #681212;
+    --white2: whitesmoke;
+
+}
+
+body{
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.admin-template { 
+    max-height: 100vh; width: 100%;
+    position: absolute;
+}
 
 /**----------------------ADMIN LOGIN----------------------**/
 
@@ -131,10 +165,13 @@ body, .Left, .upper,.Pages, .facil-stats,.right-side {
     display: flex;
 }
 
-.Pages a {
-    color: black;
+
+.Pages {
     text-decoration: none;
+    font-weight: 600;
 }
+
+/*
 
 .Pages li, nav li {
     list-style-type: none;
@@ -142,12 +179,14 @@ body, .Left, .upper,.Pages, .facil-stats,.right-side {
     padding: 0px;
     margin: 0px;
 }
+*/
 
 #title {
     flex:auto;
     max-height: 200;
     font-size: 25px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
 }
 
 nav {
@@ -155,8 +194,9 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: rgb(150, 66, 66);
+    background-color: var(--maroon);
     color: white;
+    position: relative;
 }
 
 #options {
@@ -165,19 +205,28 @@ nav {
     justify-content: flex-end;
     font-size: 20px;
     gap: 25px;
+    padding-right: 20px;
+    cursor: pointer;
 }
+
+
 
 .Center {
     flex: 0 1 auto;
-    background-color: rgb(169, 169, 169);
+    background-color: var(--white);
     height: 85vh;
     align-items: center;
     justify-content: space-between;
+    /*new----------------*/
+    position: relative;
+    width: 100%;
 }
 
+/*
 footer {
     flex: 0 1 auto;
 }
+*/
 
 .Left {
     flex: auto;
@@ -187,15 +236,124 @@ footer {
 }
 
 .Left.Cont {
-
+    /*
     background-color: rgb(244, 244, 244);
     justify-content: flex-start;
     align-items: center;
     width: 17wv;
     border-color: rgb(81, 81, 81);
     border-width: 5px;
-    min-height: 85vh;
+    min-height: 85vh;*/
+    justify-content: flex-start;
+    /*------------*/
+    position: fixed;
+    width: 300px;
+    height: 93%;
+    background: var(--red1);
+    border-left: 10px solid var(--red1);
+    bottom: 0;
+    padding-top: 10px;
+    transition: 0.5s;
+    overflow: hidden;
 }
+
+/*----------------------*/
+
+.Left.Cont ul{
+    position: absolute;
+    top: 30;
+    left: 0;
+    width: 100%;
+}
+
+.Left.Cont ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.Left.Cont ul li:hover,
+.Left.Cont ul li.hovered {
+    background-color: var(--white);
+}
+
+.Left.Cont ul li:nth-child(1){
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+
+.Left.Cont ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.Left.Cont ul li:hover a,
+.Left.Cont ul li.hovered a {
+    color: var(--red1);
+}
+
+.Left.Cont ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 70px;
+    text-align: center;
+}
+
+.Left.Cont ul li a .icon ion-icon{
+    font-size: 1.75rem;
+}
+
+.Left.Cont ul li a .title{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+/*------------curve out--------*/
+
+.Left.Cont ul li:hover a::before,
+.Left.Cont ul li.hovered a::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--white);
+    pointer-events: none;
+}
+
+
+.Left.Cont ul li:hover a::after,
+.Left.Cont ul li.hovered a::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--white);
+    pointer-events: none;
+}
+
+
+/*-------*/
 
 .Menu {
     font-size: 40px;
@@ -209,12 +367,16 @@ footer {
     padding-bottom: 20px;
 }
 
+/*
 .Pages {
     font-size: 25px;
     gap: 5vh;
     color: rgb(76, 77, 77);
     padding-top: 10vh;
 }
+*/
+
+
 
 /* This is the Content Part, ejs is goods with this*/
 /* Homepage - Statistics */
@@ -222,28 +384,48 @@ footer {
     flex: auto;
     justify-content: center;
     align-items: center;
-    background-color: aqua;
-    width: 76vw;
-    height: 80vh;
+    /*background-color: aqua;*/
+    width: 50%;
+    height: 100%;
+    position: relative;
+    background: var(--red1);
+    margin-right: 35px;
+    margin-top: 50px;
+    border-radius: 20px;
 }
 
-.right.upper, .right.lower {
+.right.upper  {
     background-color: white;
     width: 70vw;
     height: 40vh;
     padding: 10px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.right.lower {
+
+    background-color: white;
+    width: 70vw;
+    height: 40vh;
+    padding: 10px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
 .right.upper p {
-    font-size: 30px;
-    font-family: cursive;
+    font-size: 30px; 
     margin-bottom: 10px;
+    /*-------------*/
+    border-radius: 5px;
+    background: var(--white2);
 }
 
 .right.upper .stats {
-    background-color: aqua;
+    background-color: var(--maroon);
     padding: 10px;
-    height: 200px;
+    height: 300px;
+    border-radius: 10px;
 } 
 
 .right.lower {
@@ -251,19 +433,45 @@ footer {
 }
 
 .student-count {
-    height: 37vh;
-    width: 30vw;
+    height: 15%;
+    width: 45%;
     font-size: 30px;
+    /*----------*/
+    border-radius: 5px;
+    background: var(--white2);
+}
+
+.total-count{
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-top: 10px;
+    background: var(--red1);
+    color: var(--white);
+    height: 30vh;
+    position:relative;
+    font-weight: 250;
+    font-size: 20px;
+    
 }
 
 .map-prev {
     width: 40vw;
     height: 37vh;
     font-size: 30px;
+    border-radius: 5px;
+    background: var(--white2);
 }
+
 
 .facil-stats {
     font-size: 15px;
+    font-weight: 500;
+    color: var(--black1);
+
+}
+.facil-stats {
+    justify-content: space-around;
+    height: 20vh;
 }
 
 .map-stats {
@@ -273,16 +481,23 @@ footer {
     padding: 5px;
 }
 
-.facil-stats {
-    justify-content: space-around;
-    height: 20vh;
-}
+
 
 .map-btn {
-    background-color: blue;
+    background: var(--maroon);
+    border-radius: 20px;
     width: 400px;
-    height: 200px;
+    height: 210px;
     cursor: pointer;
+    color: var(--white);
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+p{
+    padding-left: 20px;
+    color: var(--red1);
+    font-weight: lighter;
 }
 
 
