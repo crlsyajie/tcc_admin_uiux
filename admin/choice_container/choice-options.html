@@ -23,9 +23,10 @@
             <h3></h3>
             <form action="/admin/setup/<%= route %>/" method="GET">     
                 <div class="d-flex justify-content-center align-items-center">
-                    <label for="count-input" style="font-size:20px;">Limit</label>
-                    <input type="text" name="limitCount" id="count-input" class="form-control form-control-sm" style="height: 15px; width: 50px; margin-left: 3px; margin-right: 1px;">
-                    <input id="limit-btn" type="submit" value="📍" style="font-size: 20px; background-color: transparent; border: none;">
+                    <label for="count-input" style="font-size:20px; font-weight: bold; margin-right: 10px; color: #B80000;">Limit: </label>
+                    <input type="text" name="limitCount" id="count-input" class="form-control form-control-sm" style="height: 15px; width: 100px; margin-left: 3px; margin-right: 1px; background: whitesmoke;">
+                    <!--<input id="limit-btn" type="submit" value="📍" style="font-size: 20px; background-color: transparent; border: none;">-->
+                    <ion-icon name="location-outline" id="limit-btn" type=" submit" style="font-size: 20px; cursor: pointer;  background: #B80000; margin-left: 5px; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px; align-items: center; border-radius: 10px; color: white;"></ion-icon>
                 </div>
             </form>
         </div>
@@ -33,12 +34,17 @@
         <div id="search" class="">
             
             <form action="" method="get" class="d-flex flex-column align-items-center" >
+                <!---
                 <div>
-                    <label for="id-input" style="font-size: 20px; text-align: center;">Search ID:</label>
-                </div>
+                    <label for="id-input" style="font-size: 20px; font-weight: bold; text-align: center;">Search ID:</label>
+                 </div> 
+                 -->
+                
                 <div class="d-flex justify-content-center align-items-center">
-                    <input name="search" type="text" id="id-input" class="form-control form-control-sm" style="width: 80px; height: 35px; border-top-right-radius: 0; border-bottom-right-radius: 0;">
-                    <input id="search-btn" type="submit" value="🔎" class="btn btn-light" style="height: 35px; border-top-right-radius: 50px; border-bottom-right-radius: 50px;">
+                    <label for="id-input" style="font-size: 20px; font-weight: bold; text-align: center; margin-right: 10px; color: #B80000;">Search ID:</label>
+                    <input name="search" type="text" id="id-input" class="form-control form-control-sm" style="width: 100px; height: 15px; border-top-right-radius: 0; border-bottom-right-radius: 0; background: whitesmoke;">
+                    <!--<input id="search-btn" type="submit" value="🔎" class="btn btn-light" style="height: 35px; border-top-right-radius: 50px; border-bottom-right-radius: 50px; background-color: transparent;">-->
+                    <ion-icon name="search-outline" id="search-btn" type="submit" class="btn btn-light" style="font-size: 20px; cursor: pointer;  background: #B80000; margin-left: 5px; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px; align-items: center; border-radius: 10px; color: white;"></ion-icon>
                 </div>
             </form>
 
@@ -46,11 +52,16 @@
 
         <div id="add"> 
                 <div class="d-flex justify-content-center align-items-center">
-                    <button onclick="" class="btn btn-success" id="add-new" style="font-size: 20px; border-radius: 50px; padding-left: 10px; padding-right: 10px; margin-top: 20px;" data-bs-toggle="modal" data-bs-target="#<%= route %>-add-modal"> ➕ Add new</button>
+                   <!--<button onclick="" class="btn btn-success" id="add-new" style="font-size: 20px; border-radius: 50px; padding-left: 10px; padding-right: 10px; margin-top: 20px;" data-bs-toggle="modal" data-bs-target="#<%= route %>-add-modal"> ➕ Add new</button> -->
+                   <button onclick="" class="btn btn-success" id="add-new" style="font-size: 20px; font-family: Poppins, sans-serif; font-weight: bold; width: 100px; border-radius: 50px; padding-left: 10px; padding-right: 10px; margin-top: 20px; background: #B80000; outline: none;" data-bs-toggle="modal" data-bs-target="#<%= route %>-add-modal"> add</button>
+                
                 </div>
         </div>
     </div>
     <!------------------------------------------------------------------------------------------->
+    <!-- icons-->
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> 
  </body>
  </html>
     

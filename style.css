@@ -248,7 +248,7 @@ footer {
     /*------------*/
     position: fixed;
     width: 300px;
-    height: 93%;
+    height: 92.66666%;
     background: var(--red1);
     border-left: 10px solid var(--red1);
     bottom: 0;
@@ -392,6 +392,8 @@ footer {
     margin-right: 35px;
     margin-top: 50px;
     border-radius: 20px;
+    overflow: hidden;
+    transition: 0.5s;
 }
 
 .right.upper  {
@@ -512,37 +514,64 @@ p{
     align-items: center;
     height: 10vh;
     width: 76vw;
-    background-color: blueviolet;
+    background: var(--red1);
 }
 
 .choices button {
-    background-color: grey;
+    background: var(--maroon);
     width: 25.33vw;
     height: 10vh;
     font-size: 20px;
     color: white;
+    font-weight: 700;
+    border-color: var(--maroon);
 }
 
 .choice-container {
-    background-color: rgb(28, 28, 28);
+    background: var(--maroon);
     height: 70vh;
     width: 76vw;
 }
 
 /* MAKE THE TABLE HEADER STICKY*/
-.table-responsive          { overflow: auto; height: 70vh; width: 76vw;}
-.table-responsive thead th { position: sticky; top: 0; z-index: 1; }
+.table-responsive { 
+    overflow: auto; 
+    height: 100%; 
+    width: 100%;
+    background: var(--red1);
+}
 
-table  { border-collapse: collapse; width: 100%; }
-th, td { padding: 8px 16px; border: solid; border-width: 2px;}
-th     { background:#eee; }
+.table-responsive thead th { 
+    position: sticky; 
+    top: 0; 
+    z-index: 1; 
+}
+
+table  { 
+    border-collapse: collapse; 
+    width: 100%; 
+}
+
+th, td { 
+    padding: 8px 16px; 
+    border: solid; 
+    border-width: 2px;
+    background: var(--maroon);
+
+}
+
+
+th     { 
+    background: var(--white2); 
+}
 
 .table-responsive,
 .table-responsive td {
-  box-shadow: inset 1px -1px #000;
+  box-shadow: inset 1px -1px var(--maroon);
 }
+
 .table-responsive th {
-  box-shadow: inset 1px 1px #000, 0 1px #000;
+  box-shadow: inset 1px 1px var(--maroon), 0 1px var(--maroon);
 }
 
 #options-panel {
@@ -552,3 +581,7 @@ th     { background:#eee; }
     justify-content: flex-start;
 }
 
+/*------------------------*/
+.location-outline{
+    color: var(--white);
+}
