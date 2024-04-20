@@ -1,0 +1,339 @@
+html, body {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.admin-template { max-height: 100vh; width: 100%;}
+
+/**----------------------ADMIN LOGIN----------------------**/
+
+#home-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(178, 118, 118);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    background-color: rgb(117, 31, 31);
+    width: 600px;
+    height: 500px;
+    padding: 0px;
+}
+
+p, #btn {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.login-top p {
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+}
+
+.login-top {
+    align-content: center;
+    text-align: center;
+    height: 100px;
+    width: 300px;
+}
+
+.login-mid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(199, 86, 86);
+    height: 250px;
+    width: 500px;
+    text-align: center;
+    align-content: center;
+    padding: 20px;
+}
+
+.login-mid p {
+    font-size: 20px;
+    padding: 0;
+}
+.uname_pass {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cred {
+    color: rgb(107, 107, 107);
+    font-size: 15px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    height: 10px;
+    width: 400px;
+    padding: 10px;
+}
+
+.login-bot {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 60px;
+    width: 530px;
+    padding:3px;
+}
+
+#login-btn {
+    background-color: rgb(92, 148, 92);
+    border-style: none;
+    height: 40px;
+    width: 120px;
+    font-size: 20px;
+    border-radius: 50px;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: white;
+    transition: 0.20s;
+} 
+
+#login-btn:hover {
+    background-color: rgb(61, 121, 61);
+    border-style: none;
+    height: 40px;
+    width: 120px;
+    font-size: 20px;
+    border-radius: 50px;
+    padding: 5px 30px;
+    cursor: pointer;
+}
+
+#login-btn:active {
+    background-color: rgb(61, 121, 61);
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(9, 33, 14);
+    height: 40px;
+    width: 120px;
+    font-size: 20px;
+    border-radius: 50px;
+    padding: 5px 30px;
+    cursor: pointer;
+}
+
+
+/**----------------------INDEX PAGE---------------------- **/
+body, .Left, .upper,.Pages, .facil-stats,.right-side {
+    display: flex;
+    flex-direction: column;
+} 
+
+.Center, .lower, nav, #options, .map-stats {
+    display: flex;
+}
+
+.Pages a {
+    color: black;
+    text-decoration: none;
+}
+
+.Pages li, nav li {
+    list-style-type: none;
+    cursor: pointer;
+    padding: 0px;
+    margin: 0px;
+}
+
+#title {
+    flex:auto;
+    max-height: 200;
+    font-size: 25px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+nav {
+    flex: 0 1 auto;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgb(150, 66, 66);
+    color: white;
+}
+
+#options {
+    flex:auto;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 20px;
+    gap: 25px;
+}
+
+.Center {
+    flex: 0 1 auto;
+    background-color: rgb(169, 169, 169);
+    height: 85vh;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer {
+    flex: 0 1 auto;
+}
+
+.Left {
+    flex: auto;
+    justify-content: center;
+    align-items: start;
+    width: 17wv;
+}
+
+.Left.Cont {
+
+    background-color: rgb(244, 244, 244);
+    justify-content: flex-start;
+    align-items: center;
+    width: 17wv;
+    border-color: rgb(81, 81, 81);
+    border-width: 5px;
+    min-height: 85vh;
+}
+
+.Menu {
+    font-size: 40px;
+    border: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 170px;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.Pages {
+    font-size: 25px;
+    gap: 5vh;
+    color: rgb(76, 77, 77);
+    padding-top: 10vh;
+}
+
+/* This is the Content Part, ejs is goods with this*/
+/* Homepage - Statistics */
+.right-side {
+    flex: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+    width: 76vw;
+    height: 80vh;
+}
+
+.right.upper, .right.lower {
+    background-color: white;
+    width: 70vw;
+    height: 40vh;
+    padding: 10px;
+}
+
+.right.upper p {
+    font-size: 30px;
+    font-family: cursive;
+    margin-bottom: 10px;
+}
+
+.right.upper .stats {
+    background-color: aqua;
+    padding: 10px;
+    height: 200px;
+} 
+
+.right.lower {
+    gap: 20px;
+}
+
+.student-count {
+    height: 37vh;
+    width: 30vw;
+    font-size: 30px;
+}
+
+.map-prev {
+    width: 40vw;
+    height: 37vh;
+    font-size: 30px;
+}
+
+.facil-stats {
+    font-size: 15px;
+}
+
+.map-stats {
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.facil-stats {
+    justify-content: space-around;
+    height: 20vh;
+}
+
+.map-btn {
+    background-color: blue;
+    width: 400px;
+    height: 200px;
+    cursor: pointer;
+}
+
+
+/*-------------QUEST PAGE----------------*/
+.right-side.quest {
+    justify-content: space-between;
+}
+
+.choices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    width: 76vw;
+    background-color: blueviolet;
+}
+
+.choices button {
+    background-color: grey;
+    width: 25.33vw;
+    height: 10vh;
+    font-size: 20px;
+    color: white;
+}
+
+.choice-container {
+    background-color: rgb(28, 28, 28);
+    height: 70vh;
+    width: 76vw;
+}
+
+/* MAKE THE TABLE HEADER STICKY*/
+.table-responsive          { overflow: auto; height: 70vh; width: 76vw;}
+.table-responsive thead th { position: sticky; top: 0; z-index: 1; }
+
+table  { border-collapse: collapse; width: 100%; }
+th, td { padding: 8px 16px; border: solid; border-width: 2px;}
+th     { background:#eee; }
+
+.table-responsive,
+.table-responsive td {
+  box-shadow: inset 1px -1px #000;
+}
+.table-responsive th {
+  box-shadow: inset 1px 1px #000, 0 1px #000;
+}
+
+#options-panel {
+    flex: auto;
+    width: 7vw;
+    height: 80vh;
+    justify-content: flex-start;
+}
+

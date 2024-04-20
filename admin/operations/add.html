@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../style.css">
+  <!-- BOOT STRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <!-- 
+       Mother Modal lang to:
+          #add-modal-1
+          #add-modal-2
+          #add-modal-3
+        
+       Dito nmay paayos nung mga fonts inputs etc, pati layouts
+       you may ano add some ID sa mga wala pa, just notify me
+  -->
+</head>
+<body>
+  <button id="btnn">Show npc modal</button>
+  <button id="btnnn">Show room modal</button>
+  <button id="btnnnn">Show quest modal</button>
+
+
+  <!------------------------------------------------------------------------------------------------->
+  <div class="modal fade bd-example-modal-lg " id="add-modal-1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" >
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Add <%= route  %></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+        <form onsubmit="return validateNpcAdd()" name="add-form" action="/admin/setup/<%= route  %>/" method="POST">
+          <div>
+
+            <label for="add-npc-id">NPC ID</label><br>
+            <input id="add-npc-id" name="add-npc-id" placeholder="Leave blank, auto generate"> 
+            <br>
+
+            <label for="add-npc-name">Name</label><br>
+            <input id="add-npc-name" type="text" name="add-npc-name">
+            <br>
+
+            <label for="add-npc-desc">Description</label><br>
+            <textarea id="add-npc-desc" type="text" name="add-npc-desc" style="width: 500px; height: 100px; resize: none;"></textarea>
+          </div>
+
+          <div>
+            <label for="add-npc-image">Image</label><br>
+            <input id="add-npc-image" type="text" name="add-npc-image">
+            <br>
+
+            <label for="add-coordinates">Coordinates</label><br>
+            <input id="add-npc-coor"  type="text" name="add-coordinates">
+          </div>
+        
+      </div>
+      <div class="modal-footer">
+      <button type="button" onclick="clearNpcInput()" class="btn btn-danger">Clear</button>
+      <input type="submit" name="add-values-btn" value="Add" class="btn btn-success">
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!------------------------------------------------------------------------------------------------->
+
+
+<!------------------------------------------------------------------------------------------------->
+<div class="modal fade bd-example-modal-lg " id="add-modal-2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" >
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Add <%= route  %></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+ <form onsubmit="return validateRoomAdd()" name="add-form" action="/admin/setup/<%= route  %>/" method="POST" class="d-flex flex-row">
+        <div>
+
+          <label for="add-room-id">Room ID</label><br>
+          <input  name="add-room-id" placeholder=""> 
+          <br>
+    
+          <label for="add-room-name">Name</label><br>
+          <input type="text" name="add-room-name">
+          <br>
+    
+          <label for="add-room-desc">Purpose</label><br>
+          <textarea type="text" name="add-room-desc" style="width: 300px; height: 60px; resize: none;"></textarea>
+          <br>
+
+          <label for="add-room-image">Image</label><br>
+          <input id="add-room-image" type="text" name="add-room-image">
+          <br>
+        </div>
+    
+        <div>
+          <label for="add-bldg">Building</label>
+          <%# For BUILDING %>
+          <select name="bldg" id="bldg" onchange="updateFloorOptions(floorList)">
+            <option value=""></option>
+          </select>
+
+          <br>
+
+          <%# For FLOOR %>
+          <label for="add-bldg">Floor</label>
+          <select name="floor" id="floor">
+            <option value=""></option>
+          </select>
+          <br>
+          <label for="add-coordinates">Coordinates</label><br>
+          <input id="add-room-coor"  type="text" name="add-coordinates">
+        </div>
+              
+        </div>
+        <div class="modal-footer">
+          <button type="button" onclick="clearRoomInput()" class="btn btn-danger">Clear</button>
+          <input type="submit" name="add-values-btn" value="Add" class="btn btn-success">
+</form>
+      </div>
+    </div>
+  </div>
+</div>
+<!------------------------------------------------------------------------------------------------->
+
+
+<!------------------------------------------------------------------------------------------------->
+<div class="modal fade bd-example-modal-lg " id="add-modal-3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" >
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Add <%= route  %></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+      <form onsubmit="return validateQuestAdd()" name="add-form" action="/admin/setup/<%= route  %>/" method="POST" class="d-flex">
+        <div>
+          <label for="add-quest-id">QUEST ID</label>
+          <br><input type="text">
+          <br>
+          <label for="add-type">QUEST TYPE</label><br>
+          <select name="add-quest-type">
+            <option value=""></option>
+            <option value="dd">Drag and Drop</option>
+            <option value="ps">Picture Selection</option>
+            <option value="fb">Fill in the blanks</option>
+          </select>
+          <br>
+          <label for="">Question</label><br>
+          <textarea id="add-question" type="text" name="add-question" style="width: 300px; height: 100px; resize: none;"></textarea>
+        </div>
+
+        <div class="d-flex flex-column justify-content-center align-items-center">
+          <div>
+            <h5>Choose Designation(1 only)</h5>
+            <div class="d-flex flex-row justify-content-center align-items-center">
+              <div>
+                <label for="add-npc-desig">NPC</label> <br>
+                <select id="add-npc-desig" name="add-npc-desig" style="width: 100px;">
+                  <option value=""></option>
+                </select>
+              </div>
+              
+              <div>
+                <label for="add-room-desig">ROOM</label> <br>
+                <select id="add-room-desig" name="add-room-desig" style="width: 100px;">
+                  <option value=""></option>
+              </select>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <label for="add-name">Answer</label> <br>
+              <input type="text" name="add-name">
+              <br>
+              <label for="add-choice-1">Choice 1:</label> <br>
+              <input type="text" name="add-choice-1">
+              <br>
+              <label for="add-choice-2">Choice 2:</label> <br>
+              <input type="text" name="add-choice-2">
+              <br>
+              <label for="add-choice-3">Choice 3:</label> <br>
+              <input type="text" name="add-choice-3">
+              <br>
+          </div>
+          </div>
+        </div>
+        </div>
+    
+        <div class="modal-footer">
+        <button type="button" onclick="clearQuestInput()" class="btn btn-danger">Clear</button>
+        <input type="submit" name="add-values-btn" value="Add" class="btn btn-success">
+        </form>
+
+  
+ 
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <!------------------------------------------------------------------------------------------------->
+     <!-- Bootstrap JS (jQuery is included in Bootstrap JS) USED for add modal-->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    document.querySelector('#btnn').addEventListener('click',()=>{
+      $('#add-modal-1').modal('show');
+    });
+    document.querySelector('#btnnn').addEventListener('click',()=>{
+      $('#add-modal-2').modal('show');
+    });
+    document.querySelector('#btnnnn').addEventListener('click',()=>{
+      $('#add-modal-3').modal('show');
+    });
+  </script>
+</body>
+</html>
+
+
