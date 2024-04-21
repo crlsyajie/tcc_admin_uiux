@@ -248,7 +248,7 @@ footer {
     /*------------*/
     position: fixed;
     width: 300px;
-    height: 92.66666%;
+    height: 93%;
     background: var(--red1);
     border-left: 10px solid var(--red1);
     bottom: 0;
