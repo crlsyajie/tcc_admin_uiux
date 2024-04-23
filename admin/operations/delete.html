@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="/style.css">
     <!-- BOOT STRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -19,12 +19,22 @@
     -->
 </head>
 <body>
-    <div id="delete-cont" class="delete-cont">
-        <form name="delete-forms" action="/admin/setup/npc/delete/<%= String(npcDesigChoice[0].npc_id) %>" >
-            <h1>Are you sure you want to delete _ with an id _</h1>
-            <a id="delete-btn-forms" class="btn btn-danger" onclick="deleteRequest('<%= npcDesigChoice[0].npc_id %>')" href="/admin/setup/npc/">Delete</a>
-            <a href="/admin/setup/npc/" class="btn btn-secondary">Back</a>
-        </form>
+    <div class="delete-bg">
+        <div id="delete-cont" class="delete-cont">
+            <form name="delete-forms" action="/admin/setup/npc/delete/<%= String(npcDesigChoice[0].npc_id) %>" >
+               
+                <h1 class="delete-quote">
+                    Are you sure you want to delete _ with an id _
+                </h1>
+                <a id="delete-btn-forms" class="btn btn-danger" onclick="deleteRequest('<%= npcDesigChoice[0].npc_id %>')" href="/admin/setup/npc/">Delete</a>
+                <a href="/admin/setup/npc/" class="btn btn-secondary">Back</a>
+            </form>
+        </div>
     </div>
+
+<!-- icons-->
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> 
+
 </body>
 </html>
