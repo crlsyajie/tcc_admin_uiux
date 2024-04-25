@@ -568,6 +568,20 @@ th, td {
 
 }
 
+#room-table-autoGen.table-responsive {
+    background: var(--white2);
+}
+
+#room-table-autoGen td {
+    color: white;
+    background: var(--red1);
+}
+
+
+#room-table-autoGen th {
+    color: white;
+    background: var(--maroon);
+}
 
 th     { 
     background: var(--white2); 
@@ -588,6 +602,18 @@ th     {
     height: 80vh;
     justify-content: flex-start;
 }
+
+#npc-table-autoGen td{
+    color: white;
+    background: var(--red1);
+}
+
+
+#npc-table-autoGen th{
+    color: white;
+    background: var(--maroon);
+}
+
 
 /*------------------------*/
 
