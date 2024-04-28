@@ -1159,21 +1159,21 @@ input[name="update-values-btn"]:hover {
 }
 
 #bottom_fitb {
-    background-color: var(--white2);
-    border: 2px var(--black2);
-    border-radius: 10px;
+    background-color: var(--red1);
+    border: 5px solid var(--white);
+    border-radius: 20px;
     padding: 20px;
     margin-bottom: 20px;
     min-height: 100px;
     overflow: hidden;
-    color: var(--red1);
+    color: var(--white);
     transition: border 0.3s, color 0.3s;
 }
 
 #answer_fitb {
     background-color: var(--white);
     border: 2px dashed var(--black2);
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 10px;
     margin-top: 10px;
     min-height: 40px;
@@ -1182,9 +1182,10 @@ input[name="update-values-btn"]:hover {
 }
 
 #bottom_fitb_two {
-    background: var(--white2);
+    background: var(--maroon);
     color: var(--white);
     padding: 30px;
+    border: 5px solid var(--white);
     border-radius: 20px;
     width: 770px;
     max-width: 100%;
@@ -1194,24 +1195,28 @@ input[name="update-values-btn"]:hover {
     font-size: 22px;
     margin-top: 20px;
     overflow: hidden;
+    box-shadow: 0 0 20px var(--black1); 
 }
 
 .draggable {
     display: inline-block;
     padding: 10px;
-    margin: 7px;
-    background-color: var(--white2);
-    border: 2px solid var(--maroon);
-    border-radius: 10px;
+    margin: 8px;
+    background-color: var(--white);
+    border: 2px solid var(--white2);
+    border-radius: 20px;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 0.3s ease;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 .draggable:hover {
-    background: var(--maroon);
+    background: var(--red1);
     color: var(--white);
     transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
